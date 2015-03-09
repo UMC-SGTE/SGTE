@@ -29,36 +29,23 @@ namespace SGTE_UMC.Controllers
         [HttpPost]
         public ActionResult Create(Funcionario a)
         {
-            
-            if (ModelState.IsValid)
+                                  
+            try
             {
-
-                string strQueryInsertFuncionario = @"INSERT INTO Tbl_Funcionario(Funcao,Matricula,Nome,Endereco,Bairro,Cidade,CEP,Estado,Tel_Residencial,Tel_Celular,Email,RG,CPF,Data_Nasc,Sexo)
-                                         VALUES(" + "'" + a.Funcao + "'" + "," + a.Matricula + "," + "'" + a.Nome + "'" + "," + "'" + a.Endereco + "'" + "," +
-                                               "'" + a.Bairro + "'" + "," + "'" + a.Cidade + "'" + "," + "'" + a.CEP + "'" + "," + "'" + a.Estado + "'" + "," + "'" + a.Tel_Residencial + "'" + ","
-                                                + "'" + a.Tel_Celular + "'" + "," + "'" + a.Email + "'" + "," + "'" + a.RG + "'" + "," + "'" + a.CPF + "'" + "," + "'" + a.Data_Nasc + "'" + "," + "'" + a.Sexo + "'" + ");" +
-                                                    "INSERT INTO Tbl_Login(Login,Senha,Nivel_Acesso) VALUES(" + "'" + a.Email + "'" + "," + "'" + a.Matricula + "'" + "," + "1);";
-                SqlCommand cmdComandoInsertFuncionario = new SqlCommand(strQueryInsertFuncionario);
-                cmdComandoInsertFuncionario.ExecuteNonQuery();
-
-                
+                if (model.Inserir(a).Equals("OK"))
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("Create");  
+                }
             }
-            return RedirectToAction("Create");
-            //try
-            //{
-            //    if (model.Inserir(a).Equ)
-            //    {
-            //        return RedirectToAction("Index");
-            //    }
-            //    else
-            //    {
-            //        return RedirectToAction("Create");
-            //    }
-            //}
-            //catch
-            //{
-            //    return View();
-            //}
+            catch
+            {
+                return View();
+            }
+            
         }
 
 

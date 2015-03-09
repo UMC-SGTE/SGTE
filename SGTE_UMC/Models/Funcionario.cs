@@ -76,7 +76,7 @@ namespace SGTE_UMC.Models
 
             try
             {
-                contexto.stp_CadastroFuncionario(a.Id, a.Funcao, a.Matricula, a.Nome, a.Endereco, a.Cidade, a.Bairro, a.CEP, a.Estado, a.Tel_Residencial, a.Tel_Celular, a.Email, a.RG, a.CPF, a.Data_Nasc, a.Sexo, null, 1, null);
+                contexto.stp_CadastroFuncionario(a.Id, a.Funcao, a.Matricula, a.Nome, a.Endereco, a.Cidade, a.Bairro, a.CEP, a.Estado, a.Tel_Residencial, a.Tel_Celular, a.Email, a.RG, a.CPF, a.Data_Nasc, a.Sexo, null, 2, null);
                 resultado = "OK";
 
             }
