@@ -2,7 +2,7 @@
 Sistema de Gerenciamento de Transporte Escolar.
 
 
-O SGTE é um Sistema desenvolvido em .Net MVC, voltado para empresas no ramo de transporte escolar. O Projeto se trata do Trabalho de TCC do curso de Sistemas de Informação da Universade São Judas Tadeu.
+O SGTE é um Sistema desenvolvido em .Net MVC, voltado para empresas no ramo de transporte escolar. O Projeto se trata do Trabalho de TCC do curso de Sistemas de Informação da Universade Mogi das Cruzes - Vila Lobos.
 
 A equipe é constituda de cinco pessoas.
 
