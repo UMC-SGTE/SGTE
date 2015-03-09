@@ -6,10 +6,10 @@ O SGTE é um Sistema desenvolvido em .Net MVC, voltado para empresas no ramo de 
 
 A equipe é constituda de cinco pessoas.
 
-Gabriel Henrique Chaves
-Alvaro Rosa Souza
-Fabio Cesar Assis da Cunha
-Joyce Matias
-Bruno Rosso
+Gabriel Henrique Chaves, 
+Alvaro Rosa Souza,
+Fabio Cesar Assis da Cunha,
+Joyce Matias,
+Bruno Rosso,
 
 O Sistema esta disponibilizado no Github para facilitar o trabalho da equipe e serve de consulta para avaliação de nosso trabalho com qualquer pessoa que gostaria de contribuir paro nosso desenvolvimento profissional.
