@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SGTEDB">
+  <DataContextMoniker Name="/SGTEDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="29f954a7-a0a3-4865-bfea-e579dd13da39" absoluteBounds="1.75, 1.875, 2, 4.0785139973958326">
+      <DataClassMoniker Name="/SGTEDBDataContext/Tbl_Funcionario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="13c70ff8-d68b-4548-b932-05ac379faabb" absoluteBounds="1.7650000000000001, 2.335, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SGTE2" Class="SGTEDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=SEE-00082-D;Initial Catalog=SGTE2;User ID=sa;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SGTE2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Tbl_Funcionario" Member="Tbl_Funcionarios">
+    <Type Name="Tbl_Funcionario">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Funcao" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Matricula" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Endereco" Type="System.String" DbType="VarChar(240) NOT NULL" CanBeNull="false" />
+      <Column Name="Bairro" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Cidade" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="CEP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Tel_Residencial" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Tel_Celular" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="RG" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="CPF" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="Data_Nasc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Sexo" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Ativo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.stp_CadastroFuncionario" Method="stp_CadastroFuncionario">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Funcao" Parameter="funcao" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="Matricula" Parameter="matricula" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="Endereco" Parameter="endereco" Type="System.String" DbType="VarChar(240)" />
+    <Parameter Name="Bairro" Parameter="bairro" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="Cidade" Parameter="cidade" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="CEP" Parameter="cEP" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="Tel_Residencial" Parameter="tel_Residencial" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="Tel_Celular" Parameter="tel_Celular" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="RG" Parameter="rG" Type="System.String" DbType="VarChar(9)" />
+    <Parameter Name="CPF" Parameter="cPF" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="Data_Nasc" Parameter="data_Nasc" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Sexo" Parameter="sexo" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="NivelAcesso" Parameter="nivelAcesso" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nivel" Parameter="nivel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Mensagem" Parameter="mensagem" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="stp_CadastroFuncionarioResult">
+      <Column Name="Mensagem" Type="System.String" DbType="VarChar(36) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
