@@ -105,6 +105,13 @@ namespace SGTE_UMC.Models.Repositório
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<stp_ListarFuncionarioResult>)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.stp_BuscarFuncionario")]
+		public ISingleResult<stp_BuscarFuncionarioResult> stp_BuscarFuncionario([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(11)")] string cpf)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), cpf);
+			return ((ISingleResult<stp_BuscarFuncionarioResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tbl_Funcionario")]
@@ -617,6 +624,320 @@ namespace SGTE_UMC.Models.Repositório
 		private System.Nullable<int> _Ativo;
 		
 		public stp_ListarFuncionarioResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ID", DbType="Int NOT NULL")]
+		public int ID
+		{
+			get
+			{
+				return this._ID;
+			}
+			set
+			{
+				if ((this._ID != value))
+				{
+					this._ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Funcao", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Funcao
+		{
+			get
+			{
+				return this._Funcao;
+			}
+			set
+			{
+				if ((this._Funcao != value))
+				{
+					this._Funcao = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Matricula", DbType="Int NOT NULL")]
+		public int Matricula
+		{
+			get
+			{
+				return this._Matricula;
+			}
+			set
+			{
+				if ((this._Matricula != value))
+				{
+					this._Matricula = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Nome
+		{
+			get
+			{
+				return this._Nome;
+			}
+			set
+			{
+				if ((this._Nome != value))
+				{
+					this._Nome = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Endereco", DbType="VarChar(240) NOT NULL", CanBeNull=false)]
+		public string Endereco
+		{
+			get
+			{
+				return this._Endereco;
+			}
+			set
+			{
+				if ((this._Endereco != value))
+				{
+					this._Endereco = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Bairro", DbType="VarChar(40) NOT NULL", CanBeNull=false)]
+		public string Bairro
+		{
+			get
+			{
+				return this._Bairro;
+			}
+			set
+			{
+				if ((this._Bairro != value))
+				{
+					this._Bairro = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cidade", DbType="VarChar(40) NOT NULL", CanBeNull=false)]
+		public string Cidade
+		{
+			get
+			{
+				return this._Cidade;
+			}
+			set
+			{
+				if ((this._Cidade != value))
+				{
+					this._Cidade = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CEP", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string CEP
+		{
+			get
+			{
+				return this._CEP;
+			}
+			set
+			{
+				if ((this._CEP != value))
+				{
+					this._CEP = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Estado", DbType="VarChar(2) NOT NULL", CanBeNull=false)]
+		public string Estado
+		{
+			get
+			{
+				return this._Estado;
+			}
+			set
+			{
+				if ((this._Estado != value))
+				{
+					this._Estado = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tel_Residencial", DbType="VarChar(80)")]
+		public string Tel_Residencial
+		{
+			get
+			{
+				return this._Tel_Residencial;
+			}
+			set
+			{
+				if ((this._Tel_Residencial != value))
+				{
+					this._Tel_Residencial = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tel_Celular", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Tel_Celular
+		{
+			get
+			{
+				return this._Tel_Celular;
+			}
+			set
+			{
+				if ((this._Tel_Celular != value))
+				{
+					this._Tel_Celular = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(80) NOT NULL", CanBeNull=false)]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RG", DbType="VarChar(9) NOT NULL", CanBeNull=false)]
+		public string RG
+		{
+			get
+			{
+				return this._RG;
+			}
+			set
+			{
+				if ((this._RG != value))
+				{
+					this._RG = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CPF", DbType="VarChar(11) NOT NULL", CanBeNull=false)]
+		public string CPF
+		{
+			get
+			{
+				return this._CPF;
+			}
+			set
+			{
+				if ((this._CPF != value))
+				{
+					this._CPF = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Data_Nasc", DbType="SmallDateTime NOT NULL")]
+		public System.DateTime Data_Nasc
+		{
+			get
+			{
+				return this._Data_Nasc;
+			}
+			set
+			{
+				if ((this._Data_Nasc != value))
+				{
+					this._Data_Nasc = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sexo", DbType="VarChar(1) NOT NULL", CanBeNull=false)]
+		public string Sexo
+		{
+			get
+			{
+				return this._Sexo;
+			}
+			set
+			{
+				if ((this._Sexo != value))
+				{
+					this._Sexo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ativo", DbType="Int")]
+		public System.Nullable<int> Ativo
+		{
+			get
+			{
+				return this._Ativo;
+			}
+			set
+			{
+				if ((this._Ativo != value))
+				{
+					this._Ativo = value;
+				}
+			}
+		}
+	}
+	
+	public partial class stp_BuscarFuncionarioResult
+	{
+		
+		private int _ID;
+		
+		private string _Funcao;
+		
+		private int _Matricula;
+		
+		private string _Nome;
+		
+		private string _Endereco;
+		
+		private string _Bairro;
+		
+		private string _Cidade;
+		
+		private string _CEP;
+		
+		private string _Estado;
+		
+		private string _Tel_Residencial;
+		
+		private string _Tel_Celular;
+		
+		private string _Email;
+		
+		private string _RG;
+		
+		private string _CPF;
+		
+		private System.DateTime _Data_Nasc;
+		
+		private string _Sexo;
+		
+		private System.Nullable<int> _Ativo;
+		
+		public stp_BuscarFuncionarioResult()
 		{
 		}
 		

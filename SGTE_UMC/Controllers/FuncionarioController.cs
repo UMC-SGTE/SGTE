@@ -22,10 +22,17 @@ namespace SGTE_UMC.Controllers
             return View();
         }
 
+        //Método para gerar uma lista de funcionarios
         public ActionResult ListarFuncioanrios() {
 
-            return View(model.ListarFuncionarios());
-        
+            return View(model.ListarFuncionarios());  
+        }
+
+        //Método que retorna detalhes de um funcionario consultado.
+        public ActionResult Details(string c = "36898877787") //recebe o cpf da modelo Funcionario
+        {
+            var funcionario = model.BuscarFuncionario(c);
+            return View(funcionario);
         }
 
         public ActionResult Create()

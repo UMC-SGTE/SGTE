@@ -113,11 +113,43 @@ namespace SGTE_UMC.Models
             
         }
 
+        public Funcionario BuscarFuncionario(string cpf) {
+
+            Funcionario a = new Funcionario();
+            try
+            {
+                var consulta = contexto.stp_BuscarFuncionario(cpf);
+
+                foreach (var funcionario in consulta)
+                {
+                  
+                    a.Id = funcionario.ID;
+                    a.Funcao = funcionario.Funcao;
+                    a.Nome = funcionario.Nome;
+                    a.Endereco = funcionario.Endereco;
+                    a.Bairro = funcionario.Bairro;
+                    a.Cidade = funcionario.Cidade;
+                    a.CEP = funcionario.CEP;
+                    a.Estado = funcionario.Estado;
+                    a.Tel_Residencial = funcionario.Tel_Residencial;
+                    a.Tel_Celular = funcionario.Tel_Celular;
+                    a.Email = funcionario.Email;
+                    a.RG = funcionario.RG;
+                    a.CPF = funcionario.CPF;
+                    a.Data_Nasc = funcionario.Data_Nasc;
+                    a.Sexo = a.Sexo;
+                   
+                }
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            return a;
+    
+        }
+
                 
     }
-}//SqlCommand cmd = new SqlCommand(@"Insert into Tbl_Funcionario (Funcao,Nome,Endereco,Bairro,Cidade,Tel_Residencial,Tel_Celular,Email,RG,CPF,Data_Nasc,Sexo, CEP, Estado,Matricula)" +
-//                                 "VALUES(" + "'" + Funcao + "'" + "," + Matricula +  "," + "'" + Nome + "'" + "," + "'" + Endereco + "'" + "," +
-//                               "'" + Bairro + "'" + "," + "'" + Cidade + "'" + "," + "'" + CEP + "'" + "," + "'" + Estado + "'" + "," + "'" + Tel_Residencial + "'" + ","
-//                                + "'" + Tel_Celular + "'" + "," + "'" + Email + "'" + "," + "'" + RG + "'" + "," + "'" + CPF + "'" + "," + "'" + Data_Nasc + "'" + "," + "'" + Sexo + "'" + ");" +
-//                                    "INSERT INTO Tbl_Login(Login,Senha,Nivel_Acesso) VALUES(" + "'" + Email + "'" + "," + "'" + Matricula + "'" + "," + "1);");
-//cmd.ExecuteNonQuery(); 
+}
