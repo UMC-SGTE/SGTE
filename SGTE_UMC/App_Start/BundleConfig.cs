@@ -20,12 +20,24 @@ namespace SGTE_UMC
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                      "~/Scripts/bs-table.js",
+                      "~/Scripts/dataTables.bootstrap.js",
+                      "~/Scripts/jquery.dataTables.min.js",
+                      "~/Scripts/ScriptSite.js",
+                      "~/Scripts/bootstrap-table-filter.js",
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap-select.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap-theme.css",
+                      "~/Content/Site.css",
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/social-buttons.css",
+                      "~/Content/font-awesome.css",
+                      "~/Content/bootstrap-select.css",
+                      "~/Content/font-awesome.min.css"));
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862

@@ -134,12 +134,45 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap-select.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\img\autoestimacriancas.png" />
+    <Content Include="Content\img\autoestimacriancas2.png" />
+    <Content Include="Content\img\bootstrap-theme.css" />
+    <Content Include="Content\img\facebook.png" />
+    <Content Include="Content\img\father.png" />
+    <Content Include="Content\img\favicon.ico" />
+    <Content Include="Content\img\footer.jpg" />
+    <Content Include="Content\img\fotolia1.jpg" />
+    <Content Include="Content\img\google.png" />
+    <Content Include="Content\img\iconbar.png" />
+    <Content Include="Content\img\iconbar2.png" />
+    <Content Include="Content\img\laptop-coffee-notebook.jpg" />
+    <Content Include="Content\img\LaptopNotepad.jpg" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\logo4.png" />
+    <Content Include="Content\img\papai.png" />
+    <Content Include="Content\img\person25_custo.png" />
+    <Content Include="Content\img\png\facebook.png" />
+    <Content Include="Content\img\png\flickr.png" />
+    <Content Include="Content\img\png\instagram.png" />
+    <Content Include="Content\img\png\linkedin.png" />
+    <Content Include="Content\img\png\logopond.png" />
+    <Content Include="Content\img\png\twitter.png" />
+    <Content Include="Content\img\png\youtube.png" />
+    <Content Include="Content\img\png\zerply.png" />
+    <Content Include="Content\img\servicos.png" />
+    <Content Include="Content\img\skype.png" />
+    <Content Include="Content\img\twitter.png" />
+    <Content Include="Content\img\WORKING.png" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\social-buttons.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Models\Repositório\SGTEDB.dbml">
@@ -147,6 +180,9 @@
       <LastGenOutput>SGTEDB.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Content\img\png\.DS_Store" />
+    <Content Include="Content\img\png\Thumbs.db" />
+    <Content Include="Content\img\Thumbs.db" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -181,6 +217,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\__MACOSX\png\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

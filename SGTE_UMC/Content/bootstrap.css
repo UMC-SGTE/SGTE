@@ -4937,6 +4937,7 @@ a.list-group-item.active > .badge,
   background-color: #eeeeee;
 }
 
+
 .jumbotron h1 {
   line-height: 1;
   color: inherit;
@@ -4949,6 +4950,8 @@ a.list-group-item.active > .badge,
 .container .jumbotron {
   border-radius: 6px;
 }
+
+
 
 @media screen and (min-width: 768px) {
   .jumbotron {
