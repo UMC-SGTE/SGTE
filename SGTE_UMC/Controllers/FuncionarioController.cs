@@ -29,7 +29,7 @@ namespace SGTE_UMC.Controllers
         }
 
         //Método que retorna detalhes de um funcionario consultado.
-        public ActionResult Details(string c = "36898877787") //recebe o cpf da modelo Funcionario
+        public ActionResult Details(string c = "36898877787") //recebe o cpf da modelo Funcionario, a string declarada é apenas um teste! remover e deixar apenas a variavel c
         {
             var funcionario = model.BuscarFuncionario(c);
             return View(funcionario);
