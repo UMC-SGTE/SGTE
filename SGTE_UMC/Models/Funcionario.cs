@@ -58,16 +58,39 @@ namespace SGTE_UMC.Models
         [Required(ErrorMessage = "Insira o Sexo")]
         public string Sexo { get; set; }
 
+      
 
 
-        public void Listar()
+
+        public List<Funcionario> ListarFuncionarios()
         {
-            var db = new Contexto();
+            
+            List<Funcionario> lista = new List<Funcionario>();
+            var consulta = contexto.stp_ListarFuncionario();
 
-            SqlCommand cmd = new SqlCommand("Select * from Tbl_Funcionario");
-            cmd.ExecuteNonQuery();
+            foreach (var funcionario in consulta)
+            {
+                Funcionario a = new Funcionario();
+                a.Id = funcionario.ID;
+                a.Funcao = funcionario.Funcao;
+                a.Nome = funcionario.Nome;
+                a.Endereco = funcionario.Endereco;
+                a.Bairro = funcionario.Bairro;
+                a.Cidade = funcionario.Cidade;
+                a.CEP = funcionario.CEP;
+                a.Estado = funcionario.Estado;
+                a.Tel_Residencial = funcionario.Tel_Residencial;
+                a.Tel_Celular = funcionario.Tel_Celular;
+                a.Email = funcionario.Email;
+                a.RG = funcionario.RG;
+                a.CPF = funcionario.CPF;
+                a.Data_Nasc = funcionario.Data_Nasc;
+                a.Sexo = a.Sexo;
 
-            //return cmd;
+                lista.Add(a);
+                
+            }
+            return lista;
         }
 
         public string Inserir(Funcionario a)

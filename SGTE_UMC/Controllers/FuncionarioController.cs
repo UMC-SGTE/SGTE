@@ -22,6 +22,12 @@ namespace SGTE_UMC.Controllers
             return View();
         }
 
+        public ActionResult ListarFuncioanrios() {
+
+            return View(model.ListarFuncionarios());
+        
+        }
+
         public ActionResult Create()
         {
             return View();
