@@ -150,6 +150,22 @@ namespace SGTE_UMC.Models
     
         }
 
+        //Método para desativar um funcionario no Bando de dados (Set Ativo = 0);
+        public string DesativarFuncioanrio(string cpf) 
+        {
+            string resultado = String.Empty;
+            try{
+                    contexto.stp_DesativarFuncionario(cpf);
+                    resultado = "OK";
+                }
+            catch (Exception ex)
+                {
+                    resultado = ex.Message;
+                }
+            return resultado;
+            
+        }
+
                 
     }
 }

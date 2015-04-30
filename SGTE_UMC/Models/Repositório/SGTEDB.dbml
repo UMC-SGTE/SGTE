@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SGTE2" Class="SGTEDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=SEE-32F30G-D\SQLEXPRESS;Initial Catalog=SGTE2;User ID=sa;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SGTE2ConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=KIDS\SQLEXPRESS;Initial Catalog=SGTE2;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SGTE2ConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Tbl_Funcionario" Member="Tbl_Funcionarios">
     <Type Name="Tbl_Funcionario">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -61,13 +61,13 @@
       <Column Name="Email" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
       <Column Name="RG" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
       <Column Name="CPF" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
-      <Column Name="Data_Nasc" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Data_Nasc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Sexo" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Column Name="Ativo" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="dbo.stp_BuscarFuncionario" Method="stp_BuscarFuncionario">
-    <Parameter Name="cpf" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="cpf" Type="System.String" DbType="VarChar(10)" />
     <ElementType Name="stp_BuscarFuncionarioResult">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Funcao" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
@@ -83,9 +83,13 @@
       <Column Name="Email" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
       <Column Name="RG" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
       <Column Name="CPF" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
-      <Column Name="Data_Nasc" Type="System.DateTime" DbType="SmallDateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Data_Nasc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="Sexo" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
       <Column Name="Ativo" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.stp_DesativarFuncionario" Method="stp_DesativarFuncionario">
+    <Parameter Name="cpf" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

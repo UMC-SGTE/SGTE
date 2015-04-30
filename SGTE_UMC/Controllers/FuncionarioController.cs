@@ -29,11 +29,13 @@ namespace SGTE_UMC.Controllers
         }
 
         //Método que retorna detalhes de um funcionario consultado.
-        public ActionResult Details(string c = "36898877787") //recebe o cpf da modelo Funcionario, a string declarada é apenas um teste! remover e deixar apenas a variavel c
+        public ActionResult Details(string c = "46776647467") //recebe o cpf da modelo Funcionario, a string declarada é apenas um teste! remover e deixar apenas a variavel c
         {
             var funcionario = model.BuscarFuncionario(c);
             return View(funcionario);
         }
+
+
 
         public ActionResult Create()
         {
@@ -62,5 +64,46 @@ namespace SGTE_UMC.Controllers
         }
 
 
+
+        //Busca Personalizada de funcionario
+        public ActionResult BuscarFuncionario(string c = "46776647467") //recebe o cpf da modelo Funcionario, a string declarada é apenas um teste! remover e deixar apenas a variavel c
+        {
+            var funcionario = model.BuscarFuncionario(c);
+            return View(funcionario);
+        }
+
+
+
+
+
+        //Desativa um funcionario do Sistema
+        [HttpGet]
+        public ActionResult DeletarFuncionario(string cpf) 
+        {
+            var funcionario = model.BuscarFuncionario(cpf);
+            return View(funcionario);
+        }
+
+        [HttpPost]
+        public ActionResult DeletarFuncionario(string cpf)
+        {
+            try
+            {
+                if (model.DesativarFuncioanrio("46776647467").Equals("OK"))
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return RedirectToAction("DeletarFuncionario");
+                }
+            }
+
+            catch {
+                return View();
+            }
+        }
+
+        
     }
 }
