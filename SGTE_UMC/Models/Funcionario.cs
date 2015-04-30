@@ -155,7 +155,7 @@ namespace SGTE_UMC.Models
         {
             string resultado = String.Empty;
             try{
-                    contexto.stp_DesativarFuncionario(cpf);
+                contexto.stp_DesativarFuncionario(cpf);
                     resultado = "OK";
                 }
             catch (Exception ex)

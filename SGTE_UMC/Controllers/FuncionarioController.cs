@@ -78,7 +78,7 @@ namespace SGTE_UMC.Controllers
 
         //Desativa um funcionario do Sistema
         [HttpGet]
-        public ActionResult DeletarFuncionario(string cpf) 
+        public ActionResult DeletarFuncionario(string cpf = "54566644456") 
         {
             var funcionario = model.BuscarFuncionario(cpf);
             return View(funcionario);
@@ -89,7 +89,7 @@ namespace SGTE_UMC.Controllers
         {
             try
             {
-                if (model.DesativarFuncioanrio("46776647467").Equals("OK"))
+                if (model.DesativarFuncioanrio(cpf).Equals("OK"))
                 {
                     return RedirectToAction("Index");
                 }
