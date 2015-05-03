@@ -13,6 +13,8 @@ namespace SGTE_UMC.Models.Repositório
     {
         public DbSet<Tbl_Funcionario> Funcionario { get; set; }
 
+        public DbSet<Tbl_Aluno> Aluno { get; set; }
+
 
 
     }

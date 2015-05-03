@@ -2,11 +2,43 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SGTEDB">
   <DataContextMoniker Name="/SGTEDBDataContext" />
   <nestedChildShapes>
-    <classShape Id="29f954a7-a0a3-4865-bfea-e579dd13da39" absoluteBounds="1.75, 1.875, 2, 4.0785139973958326">
+    <classShape Id="29f954a7-a0a3-4865-bfea-e579dd13da39" absoluteBounds="0.5, 0.5, 2, 4.0785139973958326">
       <DataClassMoniker Name="/SGTEDBDataContext/Tbl_Funcionario" />
       <nestedChildShapes>
-        <elementListCompartment Id="13c70ff8-d68b-4548-b932-05ac379faabb" absoluteBounds="1.7650000000000001, 2.335, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="13c70ff8-d68b-4548-b932-05ac379faabb" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="194e90dd-f949-4d0e-9774-60394c14c6d2" absoluteBounds="3.125, 0.5, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/SGTEDBDataContext/Tbl_Aluno" />
+      <nestedChildShapes>
+        <elementListCompartment Id="aff640ff-d7d7-4e32-a787-1993d4f0fd1c" absoluteBounds="3.1399999999999997, 0.96, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e62401d5-f2d7-4efe-b618-0c0c60c78f0c" absoluteBounds="6.125, 0.625, 2, 3.5016097005208326">
+      <DataClassMoniker Name="/SGTEDBDataContext/Tbl_Cliente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2735fe0b-06ea-4b59-8485-f30c35d09366" absoluteBounds="6.14, 1.085, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.125 : 2.31330485026042); (5.125 : 2.31330485026042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SGTEDBDataContext/Tbl_Cliente/Tbl_Cliente_Tbl_Aluno" />
+      <nodes>
+        <classShapeMoniker Id="e62401d5-f2d7-4efe-b618-0c0c60c78f0c" />
+        <classShapeMoniker Id="194e90dd-f949-4d0e-9774-60394c14c6d2" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="e762a5b9-5b5e-4434-9fde-fce25217c1c1" absoluteBounds="3.375, 4.625, 2, 2.5401025390625">
+      <DataClassMoniker Name="/SGTEDBDataContext/Tbl_Escola" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54c40f16-7159-40a7-81ff-6b5cbb8c8752" absoluteBounds="3.3899999999999997, 5.085, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.25 : 4.625); (4.25 : 4.00160970052083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/SGTEDBDataContext/Tbl_Escola/Tbl_Escola_Tbl_Aluno" />
+      <nodes>
+        <classShapeMoniker Id="e762a5b9-5b5e-4434-9fde-fce25217c1c1" />
+        <classShapeMoniker Id="194e90dd-f949-4d0e-9774-60394c14c6d2" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

@@ -119,12 +119,16 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Controllers\FuncionarioController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\Escola.cs" />
     <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\Aluno.cs" />
     <Compile Include="Models\Repositório\Contexto.cs" />
     <Compile Include="Models\Repositório\SGTEDB.designer.cs">
       <AutoGen>True</AutoGen>
@@ -209,17 +213,22 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Funcionario\Create.cshtml" />
     <Content Include="Views\Funcionario\Index.cshtml" />
-    <Content Include="Views\Funcionario\ListarFuncioanrios.cshtml" />
     <Content Include="Views\Funcionario\Details.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Funcionario\BuscarFuncionario.cshtml" />
     <Content Include="Views\Funcionario\DeletarFuncionario.cshtml" />
+    <Content Include="Views\Funcionario\BuscarFuncionario.cshtml" />
+    <Content Include="Views\Funcionario\Relatorios.cshtml" />
+    <Content Include="Views\Funcionario\ListarFuncionarios.cshtml" />
+    <Content Include="Views\Aluno\ListarAlunos.cshtml" />
+    <Content Include="Views\Aluno\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\img\__MACOSX\png\" />
+    <Folder Include="Views\Cliente\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -21,6 +21,59 @@
       <Column Name="Ativo" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Tbl_Aluno" Member="Tbl_Alunos">
+    <Type Name="Tbl_Aluno">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="RG" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="Escola" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Cidade" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Bairro" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="CEP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Endereco_1" Type="System.String" DbType="VarChar(240) NOT NULL" CanBeNull="false" />
+      <Column Name="Endereco_2" Type="System.String" DbType="VarChar(240) NOT NULL" CanBeNull="false" />
+      <Column Name="Ativo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cliente_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Veiculo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Escola_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Tbl_Cliente_Tbl_Aluno" Member="Tbl_Cliente" ThisKey="Cliente_ID" OtherKey="ID" Type="Tbl_Cliente" IsForeignKey="true" />
+      <Association Name="Tbl_Escola_Tbl_Aluno" Member="Tbl_Escola" ThisKey="Escola_ID" OtherKey="ID" Type="Tbl_Escola" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Cliente" Member="Tbl_Clientes">
+    <Type Name="Tbl_Cliente">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Cidade" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Bairro" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Endereco" Type="System.String" DbType="VarChar(240) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="CEP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Data_Nasc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RG" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="CPF" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefone" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Ativo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Tbl_Cliente_Tbl_Aluno" Member="Tbl_Alunos" ThisKey="ID" OtherKey="Cliente_ID" Type="Tbl_Aluno" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tbl_Escola" Member="Tbl_Escolas">
+    <Type Name="Tbl_Escola">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Endereco" Type="System.String" DbType="VarChar(240) NOT NULL" CanBeNull="false" />
+      <Column Name="Cidade" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Bairro" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="CEP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="CNPJ" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="Ativo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Tbl_Escola_Tbl_Aluno" Member="Tbl_Alunos" ThisKey="ID" OtherKey="Escola_ID" Type="Tbl_Aluno" />
+    </Type>
+  </Table>
   <Function Name="dbo.stp_CadastroFuncionario" Method="stp_CadastroFuncionario">
     <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
     <Parameter Name="Funcao" Parameter="funcao" Type="System.String" DbType="VarChar(80)" />
@@ -66,8 +119,12 @@
       <Column Name="Ativo" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
+  <Function Name="dbo.stp_DesativarFuncionario" Method="stp_DesativarFuncionario">
+    <Parameter Name="cpf" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
   <Function Name="dbo.stp_BuscarFuncionario" Method="stp_BuscarFuncionario">
-    <Parameter Name="cpf" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="cpf" Type="System.String" DbType="VarChar(20)" />
     <ElementType Name="stp_BuscarFuncionarioResult">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="Funcao" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
@@ -88,8 +145,71 @@
       <Column Name="Ativo" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.stp_DesativarFuncionario" Method="stp_DesativarFuncionario">
-    <Parameter Name="cpf" Type="System.String" DbType="VarChar(20)" />
+  <Function Name="dbo.stp_ListarAluno" Method="stp_ListarAluno">
+    <ElementType Name="stp_ListarAlunoResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="RG" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="Escola" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Cidade" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Bairro" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="CEP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="Endereco_1" Type="System.String" DbType="VarChar(240) NOT NULL" CanBeNull="false" />
+      <Column Name="Endereco_2" Type="System.String" DbType="VarChar(240) NOT NULL" CanBeNull="false" />
+      <Column Name="Ativo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cliente_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Veiculo_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Escola_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.stp_CadastroAluno" Method="stp_CadastroAluno">
+    <Parameter Name="Cliente_ID" Parameter="cliente_ID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NomeCliente" Parameter="nomeCliente" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="Endereço_1" Parameter="endereço_1" Type="System.String" DbType="VarChar(240)" />
+    <Parameter Name="Endereco_2" Parameter="endereco_2" Type="System.String" DbType="VarChar(240)" />
+    <Parameter Name="RG" Parameter="rG" Type="System.String" DbType="VarChar(9)" />
+    <Parameter Name="Escola" Parameter="escola" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="EscolaID" Parameter="escolaID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Matricula" Parameter="matricula" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Mensagem" Parameter="mensagem" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.stp_ListarCliente" Method="stp_ListarCliente">
+    <ElementType Name="stp_ListarClienteResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nome" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Cidade" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Bairro" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Endereco" Type="System.String" DbType="VarChar(240) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="CEP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Data_Nasc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="RG" Type="System.String" DbType="VarChar(9) NOT NULL" CanBeNull="false" />
+      <Column Name="CPF" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefone" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Ativo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.stp_CadastroCliente" Method="stp_CadastroCliente">
+    <Parameter Name="ID" Parameter="iD" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nome" Parameter="nome" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="Endereco" Parameter="endereco" Type="System.String" DbType="VarChar(240)" />
+    <Parameter Name="Bairro" Parameter="bairro" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="Cidade" Parameter="cidade" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="CEP" Parameter="cEP" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Estado" Parameter="estado" Type="System.String" DbType="VarChar(2)" />
+    <Parameter Name="Celular" Parameter="celular" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="Telefone" Parameter="telefone" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(80)" />
+    <Parameter Name="RG" Parameter="rG" Type="System.String" DbType="VarChar(9)" />
+    <Parameter Name="CPF" Parameter="cPF" Type="System.String" DbType="VarChar(11)" />
+    <Parameter Name="Data_Nasc" Parameter="data_Nasc" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Matricula" Parameter="matricula" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Mensagem" Parameter="mensagem" Type="System.String" DbType="VarChar(20)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

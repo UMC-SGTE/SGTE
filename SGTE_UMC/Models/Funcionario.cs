@@ -73,6 +73,7 @@ namespace SGTE_UMC.Models
                 Funcionario a = new Funcionario();
                 a.Id = funcionario.ID;
                 a.Funcao = funcionario.Funcao;
+                a.Matricula = funcionario.Matricula;
                 a.Nome = funcionario.Nome;
                 a.Endereco = funcionario.Endereco;
                 a.Bairro = funcionario.Bairro;
@@ -155,7 +156,7 @@ namespace SGTE_UMC.Models
         {
             string resultado = String.Empty;
             try{
-                contexto.stp_DesativarFuncionario(cpf);
+                    contexto.stp_DesativarFuncionario(cpf);
                     resultado = "OK";
                 }
             catch (Exception ex)
